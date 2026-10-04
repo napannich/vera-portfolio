@@ -250,3 +250,50 @@ figcaption .tag{background:rgba(19,16,14,.7)}
   .contact{padding:100px 0 80px}
 }
 @media (max-width:760px){.c-third .card-media{aspect-ratio:16/11}}
+
+/* ---------- v2: cases, value props, mockups, palettes ---------- */
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.value{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;display:flex;flex-direction:column;gap:12px}
+.value-no{font:600 12px/1 var(--sans);letter-spacing:.14em;color:var(--peach)}
+.value h3{font:400 26px/1.1 var(--display)}
+.value p{margin:0;color:var(--ink-2);font-size:15px}
+.value a{margin-top:auto;color:var(--peach-2);font-size:14px;font-weight:600}
+.case-card{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:48px}
+.case-card>div{background:var(--bg-2);padding:22px 20px}
+.case-card h4{margin:0 0 10px;font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--peach)}
+.case-card p,.case-card li{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.5}
+.case-card ul{margin:0;padding-left:16px}
+.note{margin-top:14px;font-size:13px;color:var(--ink-3)}
+.badge{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-radius:999px;font:600 11px/1 var(--sans);letter-spacing:.04em;background:rgba(19,16,14,.78);border:1px solid var(--line-2);color:var(--ink-2)}
+.badge.ai{border-color:rgba(111,214,198,.55);color:var(--teal)}
+.badge.ui{border-color:rgba(232,183,101,.55);color:var(--gold)}
+.badge.real{border-color:rgba(255,154,107,.55);color:var(--peach-2)}
+.fig-badge{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap;z-index:2}
+.mock-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.mock-grid figure{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;background:var(--bg-2)}
+.mock-grid img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+.mock-grid figcaption{position:static;padding:14px 16px;color:var(--ink-2);font-size:14px;background:var(--bg-2)}
+.mock-grid figcaption b{color:var(--ink);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:18px;color:var(--ink-3);font-size:13px}
+.palette{display:flex;gap:0;border-radius:10px;overflow:hidden;height:34px;margin-top:16px;max-width:420px}
+.palette span{flex:1}
+.palette-label{font-size:12px;color:var(--ink-3);margin-top:8px}
+.timeline{border-top:1px solid var(--line);margin-top:34px}
+.tl{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.tl b{font:400 22px/1 var(--display);color:var(--ink)}
+.tl span{color:var(--ink-2)}
+.case-video{margin-top:18px;border-radius:14px;overflow:hidden;background:#000}
+.case-video video{display:block;width:100%;height:auto}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.c-quarter{grid-column:span 3}.c-quarter .card-media{aspect-ratio:3/4}
+@media (max-width:1024px){.value-grid{grid-template-columns:repeat(2,1fr)}.case-card{grid-template-columns:repeat(2,1fr)}.c-quarter{grid-column:span 6}}
+@media (max-width:760px){.value-grid,.case-card{grid-template-columns:1fr}.mock-grid figure{grid-column:span 12!important}.tl{grid-template-columns:80px 1fr}.c-quarter{grid-column:span 12}}
+.gallery video{width:100%;display:block}
+.mock-grid img{height:auto}
+.fig-badge{left:auto;right:12px}
+.hero-bg{left:30%}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(19,16,14,0) 28%)}
+@media (max-width:760px){.hero-bg{left:0}.hero-bg::after{display:none}}
+.card-media::after{background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(10,8,7,.55) 60%,rgba(10,8,7,.92) 100%)}
+.card-title,.card-no{text-shadow:0 1px 12px rgba(0,0,0,.55)}
+@media (max-width:760px){.hero::after{background:linear-gradient(180deg,rgba(19,16,14,.35) 0%,rgba(19,16,14,.55) 35%,rgba(19,16,14,.92) 75%,var(--bg) 100%)}.c-half .card-media,.c-big .card-media{aspect-ratio:4/5}}
