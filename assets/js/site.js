@@ -81,23 +81,35 @@
     imgs.forEach(i => i.complete ? bump() : (i.addEventListener('load', bump), i.addEventListener('error', bump)));
     document.addEventListener('gl:asset', bump);
     const started = performance.now();
+    let finished = false;
+    const markReady = () => {
+      if (finished) return;
+      finished = true;
+      shown = 1;
+      if (num) num.textContent = '100';
+      if (bar) bar.style.transform = 'scaleX(1)';
+      pre.classList.add('is-ready');
+    };
     const tick = () => {
+      if (finished) return;
       const real = Math.min(1, done / total);
-      const floor = Math.min(1, (performance.now() - started) / 1500);  // never stall at 0
-      const p = Math.max(real, floor);
-      shown += (p - shown) * 0.14;
+      // time-driven so a throttled rAF can never stall the counter
+      const timed = Math.min(1, (performance.now() - started) / 1800);
+      shown = Math.max(shown, Math.max(timed * 0.92, (real + timed) / 2));
       if (num) num.textContent = String(Math.round(shown * 100)).padStart(3, '0');
       if (bar) bar.style.transform = `scaleX(${shown})`;
-      if (shown > 0.975) { shown = 1; if (num) num.textContent = '100'; if (bar) bar.style.transform = 'scaleX(1)'; pre.classList.add('is-ready'); return; }
+      if (shown >= 0.999) { markReady(); return; }
       requestAnimationFrame(tick);
     };
     tick();
+    setTimeout(markReady, 3200);              // backstop if rAF is throttled
     const enter = pre.querySelector('.pre-enter');
-    const go = async (withSound) => {
-      if (withSound) { await Audio_.toggle(true); Audio_.play('enter', 0.9); }
+    const go = (withSound) => {
       pre.classList.add('is-gone');
       root.classList.remove('is-locked');
       setTimeout(() => { pre.remove(); document.dispatchEvent(new CustomEvent('gl:remeasure')); }, 1100);
+      // audio loads in the background — entering never waits on it
+      if (withSound) Audio_.toggle(true).then(() => Audio_.play('enter', 0.9)).catch(() => {});
     };
     root.classList.add('is-locked');
     enter?.addEventListener('click', () => go(true));
