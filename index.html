@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#13100e">
-<title>Vera Napalkova — Stylized Character Artist · 2D concept → 3D</title>
-<meta name="description" content="Digital exhibition of Vera Napalkova: stylized character design, production turnarounds, skins, key art and 3D in Blender. Client commissions since 2024.">
-<meta property="og:title" content="Vera Napalkova — Stylized Character Artist">
+<meta name="theme-color" content="#f4f1eb">
+<title>Vera Napalkova — Character Artist · 2D concept → 3D</title>
+<meta name="description" content="Portfolio of Vera Napalkova: stylized character design, turnarounds, skins, key art and 3D in Blender. Client commissions since 2024.">
+<meta property="og:title" content="Vera Napalkova — Character Artist">
 <meta property="og:description" content="Character design, turnarounds, skins, key art and 3D. Client commissions since 2024.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/images/og-cover.jpg">
@@ -14,154 +14,118 @@
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 <script>try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('vera-lang');if(l==='ru'||l==='en'){document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l}}catch(e){}</script>
 <link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/exhibition.css">
+<link rel="stylesheet" href="assets/css/calm.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="preloader"><div class="pre-inner">
-  <h1 class="pre-name">Vera <em>Napalkova</em></h1>
-  <p class="pre-role"><span class="en">Stylized character artist · 2D → 3D</span><span class="ru">Художник по персонажам · 2D → 3D</span></p>
-  <div class="pre-count"><span data-count>000</span><small><span class="en">loading the exhibition</span><span class="ru">загружаем экспозицию</span></small></div>
-  <div class="pre-bar"><span></span></div>
-  <div class="pre-actions">
-    <button class="pre-enter" type="button"><span class="en">Enter with sound</span><span class="ru">Войти со звуком</span></button>
-    <button class="pre-silent" type="button"><span class="en">Enter silently</span><span class="ru">Войти без звука</span></button>
-  </div>
-</div></div>
-<div class="veil"></div>
-<canvas id="gl" aria-hidden="true"></canvas>
-
 <header class="site-nav"><div class="shell nav-inner">
-  <a class="brand" href="index.html" aria-label="Vera Napalkova"><span class="brand-mark">V</span><span class="brand-name">Vera Napalkova</span></a>
-  <nav class="nav-links" aria-label="Sections"><a href="#works"><span class="en">Works</span><span class="ru">Работы</span></a><a href="art.html"><span class="en">Illustration</span><span class="ru">Иллюстрации</span></a><a href="#about"><span class="en">About</span><span class="ru">Обо мне</span></a><a href="cv.html"><span class="en">CV</span><span class="ru">CV</span></a></nav>
+  <a class="brand" href="index.html">Vera Napalkova</a>
+  <nav class="nav-links" aria-label="Sections"><a href="#work"><span class="en">Work</span><span class="ru">Работы</span></a><a href="art.html"><span class="en">Illustration</span><span class="ru">Иллюстрации</span></a><a href="#about"><span class="en">About</span><span class="ru">Обо мне</span></a><a href="cv.html"><span class="en">CV</span><span class="ru">CV</span></a></nav>
   <div class="nav-end">
-    <button class="sound" type="button" aria-label="Toggle sound"><span class="eq"><i></i><i></i><i></i><i></i></span><span data-sound-label>MUTED</span><span data-timecode>00:00:00</span></button>
     <button class="lang-btn" type="button" aria-label="Switch language">RU</button>
+    <a class="nav-contact" href="#contact"><span class="en">Contact</span><span class="ru">Связаться</span></a>
     <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </div></header>
-<div class="mobile-menu"><a href="#works"><span class="en">Works</span><span class="ru">Работы</span></a><a href="art.html"><span class="en">Illustration</span><span class="ru">Иллюстрации</span></a><a href="#about"><span class="en">About</span><span class="ru">Обо мне</span></a><a href="cv.html"><span class="en">CV</span><span class="ru">CV</span></a><a href="#contact"><span class="en">Contact</span><span class="ru">Контакты</span></a></div>
+<div class="mobile-menu"><a href="#work"><span class="en">Work</span><span class="ru">Работы</span></a><a href="art.html"><span class="en">Illustration</span><span class="ru">Иллюстрации</span></a><a href="#about"><span class="en">About</span><span class="ru">Обо мне</span></a><a href="cv.html"><span class="en">CV</span><span class="ru">CV</span></a><a href="#contact"><span class="en">Contact</span><span class="ru">Контакты</span></a></div>
 
 <main id="main">
 
-<section class="x-hero">
-  <div class="x-hero-media"><div class="gl-media" data-gl="assets/gl/lily-a.webp" data-gl-b="assets/gl/lily-a.webp">
-    <img src="assets/gl/lily-a.webp" alt="Lily Spirit, key illustration" fetchpriority="high"></div></div>
-  <div class="shell">
-    <h1 class="x-title">Vera<br><em>Napalkova</em></h1>
-    <div class="x-hero-foot">
-      <p class="x-lede"><span class="en">Stylized <b>character artist</b>. I take a character from costume design to a production turnaround, key art and a <b>3D model in Blender</b>.</span><span class="ru">Стилизованный <b>художник по персонажам</b>. Веду персонажа от дизайна костюма до продакшн-разворота, ключевого арта и <b>3D-модели в Blender</b>.</span></p>
-      <div class="x-meta"><span class="en">Commissions since 2024</span><span class="ru">Заказы с 2024</span><br><span class="en">Russia · Europe · Canada</span><span class="ru">Россия · Европа · Канада</span><br><span class="en">Remote · UTC+3</span><span class="ru">Удалённо · МСК</span></div>
+<section class="c-intro"><div class="shell">
+  <div class="c-intro-grid">
+    <div>
+      <span class="eyebrow"><span class="en">Character artist · 2D concept → 3D</span><span class="ru">Художник по персонажам · 2D-концепт → 3D</span></span>
+      <h1 class="c-name" style="margin-top:18px">Vera Napalkova</h1>
+    </div>
+    <div>
+      <p class="c-lede"><span class="en">I design stylized characters and take them from costume concept to a production turnaround, key art and a <b>3D model in Blender</b>. Client commissions since 2024.</span><span class="ru">Рисую стилизованных персонажей и веду их от концепта костюма до продакшн-разворота, ключевого арта и <b>3D-модели в Blender</b>. Работаю с заказчиками с 2024 года.</span></p>
+      <div class="c-quick"><a class="link" href="#work"><span class="en">See the work</span><span class="ru">Смотреть работы</span></a><a class="link" href="cv.html">CV</a><a class="link" href="https://t.me/RoyScit" target="_blank" rel="noopener">Telegram</a></div>
     </div>
   </div>
-  <span class="scroll-hint"><span class="en">Scroll</span><span class="ru">Листай</span></span>
-</section>
-
-<section class="x-statement"><div class="shell">
-  <p class="reveal"><span class="en">Six projects.<br>One <em>cast</em>.</span><span class="ru">Шесть проектов.<br>Одни <em>герои</em>.</span></p>
-  <p class="sub reveal"><span class="en">Every character here went through the same route: costume design, a readable silhouette, a turnaround a modeler can work from, and — where it matters — a model. Hover any piece to see its other half.</span><span class="ru">Каждый персонаж здесь прошёл один маршрут: дизайн костюма, читаемый силуэт, разворот, по которому может работать 3D-художник, и там, где нужно, модель. Наведи курсор на любую работу, чтобы увидеть её вторую половину.</span></p>
 </div></section>
 
-<section id="works">
-  <div class="shell">
-    <article class="x-work  reveal">
-  <div class="x-work-head"><span class="x-work-idx">01 / 06</span><span class="x-work-tags"><span class="en">Character · Key art · 3D</span><span class="ru">Персонаж · Арт · 3D</span></span></div>
-  <a class="gl-media" href="project-imp.html" data-gl="assets/gl/imp-a.webp" data-gl-b="assets/gl/imp-b.webp" data-cursor="Masked Imp" aria-label="Masked Imp">
-    <img src="assets/gl/imp-a.webp" alt="Masked Imp" loading="lazy">
-  </a>
-  <a href="project-imp.html"><h3 class="x-work-title">Masked Imp<span class="arrow">↗</span></h3></a>
-  <p class="x-work-note"><span class="en">A full character package: production turnaround, key illustration and a 3D model in Blender. Hover to watch the illustration melt into the model.</span><span class="ru">Полный пакет персонажа: продакшн-разворот, ключевая иллюстрация и 3D-модель в Blender. Наведи курсор, и иллюстрация перетечёт в модель.</span></p>
-  <span class="x-hint"><span class="en">Hover — 2D becomes 3D</span><span class="ru">Наведи — 2D станет 3D</span></span>
-</article>
-    <article class="x-work  reveal">
-  <div class="x-work-head"><span class="x-work-idx">02 / 06</span><span class="x-work-tags"><span class="en">Character sheet · Key art</span><span class="ru">Лист персонажа · Арт</span></span></div>
-  <a class="gl-media" href="project-lily.html" data-gl="assets/gl/lily-a.webp" data-gl-b="assets/gl/lily-b.webp" data-cursor="Lily Spirit" aria-label="Lily Spirit">
-    <img src="assets/gl/lily-a.webp" alt="Lily Spirit" loading="lazy">
-  </a>
-  <a href="project-lily.html"><h3 class="x-work-title">Lily Spirit<span class="arrow">↗</span></h3></a>
-  <p class="x-work-note"><span class="en">A forest spirit with a water-lily head, built to stay readable from every angle.</span><span class="ru">Лесной дух с головой-кувшинкой, который читается с любого ракурса.</span></p>
-  <span class="x-hint"><span class="en">Hover — the full sheet</span><span class="ru">Наведи — весь лист</span></span>
-</article>
-    <div class="x-split"><article class="x-work is-tall reveal">
-  <div class="x-work-head"><span class="x-work-idx">03 / 06</span><span class="x-work-tags"><span class="en">5 skins · Armor · Expressions</span><span class="ru">5 скинов · Броня · Эмоции</span></span></div>
-  <a class="gl-media" href="project-skins.html" data-gl="assets/gl/paladin-a.webp" data-gl-b="assets/gl/paladin-b.webp" data-cursor="Radiant Paladin" aria-label="Radiant Paladin">
-    <img src="assets/gl/paladin-a.webp" alt="Radiant Paladin" loading="lazy">
-  </a>
-  <a href="project-skins.html"><h3 class="x-work-title">Radiant Paladin<span class="arrow">↗</span></h3></a>
-  <p class="x-work-note"><span class="en">One base hero pushed into five colour and material skins, the way live games monetise characters.</span><span class="ru">Один базовый герой, разведённый в пять скинов по цвету и материалу, как в живых играх.</span></p>
-  <span class="x-hint"><span class="en">Hover — the variants</span><span class="ru">Наведи — варианты</span></span>
-</article><article class="x-work is-tall reveal">
-  <div class="x-work-head"><span class="x-work-idx">05 / 06</span><span class="x-work-tags"><span class="en">Stone · Steel · Gold</span><span class="ru">Камень · Сталь · Золото</span></span></div>
-  <a class="gl-media" href="project-characters.html" data-gl="assets/gl/horned-a.webp" data-gl-b="assets/gl/horned-b.webp" data-cursor="Horned Automaton" aria-label="Horned Automaton">
-    <img src="assets/gl/horned-a.webp" alt="Horned Automaton" loading="lazy">
-  </a>
-  <a href="project-characters.html"><h3 class="x-work-title">Horned Automaton<span class="arrow">↗</span></h3></a>
-  <p class="x-work-note"><span class="en">Stone skin, segmented mechanical limbs, gold veins running like repaired cracks.</span><span class="ru">Каменная кожа, сегментные механические конечности, золотые прожилки как заделанные трещины.</span></p>
-  <span class="x-hint"><span class="en">Hover — the head</span><span class="ru">Наведи — голова</span></span>
-</article></div>
-    <article class="x-work  reveal">
-  <div class="x-work-head"><span class="x-work-idx">04 / 06</span><span class="x-work-tags"><span class="en">Stylized interior · Prop set</span><span class="ru">Интерьер · Набор пропсов</span></span></div>
-  <a class="gl-media" href="project-shop.html" data-gl="assets/gl/shop-a.webp" data-gl-b="assets/gl/shop-b.webp" data-cursor="The Horned Shopkeeper" aria-label="The Horned Shopkeeper">
-    <img src="assets/gl/shop-a.webp" alt="The Horned Shopkeeper" loading="lazy">
-  </a>
-  <a href="project-shop.html"><h3 class="x-work-title">The Horned Shopkeeper<span class="arrow">↗</span></h3></a>
-  <p class="x-work-note"><span class="en">A cozy fantasy shop run by a giant creature overgrown with ivy. One story moment, dozens of hand-made props.</span><span class="ru">Уютная фэнтези-лавка с огромным существом в плюще. Один сюжетный момент и десятки пропсов ручной работы.</span></p>
-  <span class="x-hint"><span class="en">Hover — close up</span><span class="ru">Наведи — крупный план</span></span>
-</article>
-    <div class="x-split"><article class="x-work is-tall reveal">
-  <div class="x-work-head"><span class="x-work-idx">06 / 06</span><span class="x-work-tags"><span class="en">Dark fantasy · Organic</span><span class="ru">Dark fantasy · Органика</span></span></div>
-  <a class="gl-media" href="project-weapon.html" data-gl="assets/gl/weapon-a.webp" data-gl-b="assets/gl/weapon-b.webp" data-cursor="Bone Pistol" aria-label="Bone Pistol">
-    <img src="assets/gl/weapon-a.webp" alt="Bone Pistol" loading="lazy">
-  </a>
-  <a href="project-weapon.html"><h3 class="x-work-title">Bone Pistol<span class="arrow">↗</span></h3></a>
-  <p class="x-work-note"><span class="en">A pistol silhouette built entirely from anatomy: spine plates, ribs, flesh and a fanged skull for a muzzle.</span><span class="ru">Силуэт пистолета, собранный целиком из анатомии: пластины хребта, рёбра, плоть и череп с клыками вместо дула.</span></p>
-  <span class="x-hint"><span class="en">Hover — second angle</span><span class="ru">Наведи — второй ракурс</span></span>
-</article>
-      <article class="x-work reveal">
-        <div class="x-work-head"><span class="x-work-idx">+ / 06</span><span class="x-work-tags"><span class="en">Illustration · Comics</span><span class="ru">Иллюстрация · Комикс</span></span></div>
-        <a class="gl-media" href="art.html" data-gl="assets/images/ill-forest-couple.webp" data-gl-b="assets/images/comic-p1.webp" data-cursor="Illustration" aria-label="Illustration">
-          <img src="assets/images/ill-forest-couple.webp" alt="Illustration" loading="lazy"></a>
-        <a href="art.html"><h3 class="x-work-title"><span class="en">Illustration</span><span class="ru">Иллюстрация</span><span class="arrow">↗</span></h3></a>
-        <p class="x-work-note"><span class="en">Commissions and zine work, 2023–2025: story illustration and comic pages for clients in Russia, Europe and Canada.</span><span class="ru">Заказы и работы для зинов, 2023–2025: сюжетные иллюстрации и страницы комикса для клиентов из России, Европы и Канады.</span></p>
-        <span class="x-hint"><span class="en">Hover — comic pages</span><span class="ru">Наведи — комикс</span></span>
-      </article>
+<div class="shell reveal">
+  <figure class="c-hero-fig"><img src="assets/images/lily-key-art.webp" alt="Lily Spirit, key illustration" fetchpriority="high" data-zoom></figure>
+  <div class="c-cap"><span>Lily Spirit — <span class="en">key art</span><span class="ru">иллюстрация</span></span><span><span class="en">Client commission, 2024</span><span class="ru">Заказ, 2024</span></span></div>
+</div>
+
+<section class="c-section" id="work"><div class="shell">
+  <div class="c-head"><h2><span class="en">Selected work</span><span class="ru">Избранные работы</span></h2><p><span class="en">Each project opens a case: the task, my part, decisions, tools and result.</span><span class="ru">В каждом проекте кейс: задача, мой вклад, решения, инструменты и результат.</span></p></div>
+  <div class="c-grid">
+    <a class="c-work wide reveal" href="project-imp.html">
+  <div class="c-media gray"><img class="a has-b" src="assets/gl/imp-a.webp" alt="Masked Imp" loading="lazy"><img class="b fit" src="assets/gl/imp-b.webp" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="c-meta"><h3 class="c-title">Masked Imp</h3><span class="c-year"><span class="en">Client · 2024</span><span class="ru">Заказ · 2024</span></span>
+  <p class="c-desc"><span class="en">Character sheet, key art and a 3D model in Blender: one character carried from 2D into 3D.</span><span class="ru">Лист персонажа, иллюстрация и 3D-модель в Blender: один персонаж, проведённый из 2D в 3D.</span></p><span class="c-swap"><span class="en">Hover to see the 3D model</span><span class="ru">Наведите, чтобы увидеть 3D-модель</span></span></div>
+</a><a class="c-work reveal" href="project-lily.html">
+  <div class="c-media light"><img class="a has-b fit" src="assets/gl/lily-b.webp" alt="Lily Spirit" loading="lazy"><img class="b" src="assets/gl/lily-a.webp" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="c-meta"><h3 class="c-title">Lily Spirit</h3><span class="c-year"><span class="en">Client · 2024</span><span class="ru">Заказ · 2024</span></span>
+  <p class="c-desc"><span class="en">A forest spirit with a water-lily head: turnaround, expressions and key art.</span><span class="ru">Лесной дух с головой-кувшинкой: разворот, эмоции и иллюстрация.</span></p><span class="c-swap"><span class="en">Hover for the key art</span><span class="ru">Наведите, чтобы увидеть иллюстрацию</span></span></div>
+</a><a class="c-work reveal" href="project-skins.html">
+  <div class="c-media gray"><img class="a has-b" src="assets/gl/paladin-a.webp" alt="Radiant Paladin" loading="lazy"><img class="b" src="assets/gl/paladin-b.webp" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="c-meta"><h3 class="c-title">Radiant Paladin</h3><span class="c-year"><span class="en">Skins & costumes</span><span class="ru">Скины и костюмы</span></span>
+  <p class="c-desc"><span class="en">One base hero developed into five colour and material skins, plus expressions.</span><span class="ru">Один базовый герой, разведённый в пять скинов по цвету и материалу, плюс эмоции.</span></p></div>
+</a><a class="c-work reveal" href="project-shop.html">
+  <div class="c-media "><img class="a has-b" src="assets/gl/shop-a.webp" alt="The Horned Shopkeeper" loading="lazy"><img class="b" src="assets/gl/shop-b.webp" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="c-meta"><h3 class="c-title">The Horned Shopkeeper</h3><span class="c-year"><span class="en">3D · Environment</span><span class="ru">3D · Окружение</span></span>
+  <p class="c-desc"><span class="en">A cozy fantasy shop run by a giant creature overgrown with ivy, with a full prop set.</span><span class="ru">Уютная фэнтези-лавка с огромным существом в плюще и полным набором пропсов.</span></p></div>
+</a><a class="c-work reveal" href="project-characters.html">
+  <div class="c-media dark"><img class="a has-b" src="assets/gl/horned-b.webp" alt="Horned Automaton" loading="lazy"><img class="b fit" src="assets/gl/horned-a.webp" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="c-meta"><h3 class="c-title">Horned Automaton</h3><span class="c-year"><span class="en">3D · Creature</span><span class="ru">3D · Существо</span></span>
+  <p class="c-desc"><span class="en">Stone skin, segmented mechanical limbs and gold veins like repaired cracks.</span><span class="ru">Каменная кожа, сегментные механические конечности, золотые прожилки как заделанные трещины.</span></p></div>
+</a><a class="c-work reveal" href="project-weapon.html">
+  <div class="c-media dark"><img class="a has-b" src="assets/gl/weapon-a.webp" alt="Bone Pistol" loading="lazy"><img class="b" src="assets/gl/weapon-b.webp" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="c-meta"><h3 class="c-title">Bone Pistol</h3><span class="c-year"><span class="en">3D · Hero prop</span><span class="ru">3D · Хиро-пропс</span></span>
+  <p class="c-desc"><span class="en">A pistol silhouette built from anatomy: spine plates, ribs and a fanged skull for a muzzle.</span><span class="ru">Силуэт пистолета из анатомии: пластины хребта, рёбра и череп с клыками вместо дула.</span></p></div>
+</a><a class="c-work reveal" href="project-island.html">
+  <div class="c-media "><img class="a has-b" src="assets/images/island-hero.webp" alt="Autumn Island" loading="lazy"><img class="b" src="assets/images/island-house.webp" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="c-meta"><h3 class="c-title">Autumn Island</h3><span class="c-year"><span class="en">3D · Diorama</span><span class="ru">3D · Диорама</span></span>
+  <p class="c-desc"><span class="en">A floating island with a cottage under an autumn tree, rendered with a short loop.</span><span class="ru">Парящий остров с домиком под осенним деревом, рендер и короткая анимация.</span></p></div>
+</a>
+  </div>
+</div></section>
+
+<section class="c-section" id="illustration"><div class="shell">
+  <div class="c-head"><h2><span class="en">Illustration & comics</span><span class="ru">Иллюстрация и комикс</span></h2><a class="link" href="art.html"><span class="en">All illustration</span><span class="ru">Все иллюстрации</span></a></div>
+  <div class="c-strip"><a class="reveal" href="art.html"><div class="c-media"><img src="assets/images/ill-forest-couple.webp" alt="" loading="lazy"></div>
+  <div class="c-meta"><span class="c-year"><span class="en">Commission · Europe · 2025</span><span class="ru">Заказ · Европа · 2025</span></span></div></a><a class="reveal" href="art.html"><div class="c-media"><img src="assets/images/comic-p1.webp" alt="" loading="lazy"></div>
+  <div class="c-meta"><span class="c-year"><span class="en">Comic page · Canada · 2024</span><span class="ru">Комикс · Канада · 2024</span></span></div></a><a class="reveal" href="art.html"><div class="c-media"><img src="assets/images/ill-magician.webp" alt="" loading="lazy"></div>
+  <div class="c-meta"><span class="c-year"><span class="en">Commission · Russia · 2025</span><span class="ru">Заказ · Россия · 2025</span></span></div></a></div>
+</div></section>
+
+<section class="c-section" id="about"><div class="shell">
+  <div class="c-head"><h2><span class="en">About</span><span class="ru">Обо мне</span></h2></div>
+  <div class="c-about">
+    <h2 class="reveal"><span class="en">I draw the character first, then I <em>build it</em>.</span><span class="ru">Сначала я рисую персонажа, потом <em>строю его</em>.</span></h2>
+    <div class="reveal">
+      <p><span class="en">I came to 3D from illustration, so I think about a character as a whole: how it reads as a silhouette, how its costume scales into skins, and how a sheet turns into a model.</span><span class="ru">Я пришла в 3D из иллюстрации, поэтому думаю о персонаже целиком: как он читается силуэтом, как костюм разводится в скины и как лист превращается в модель.</span></p>
+      <p><span class="en">Comfortable with briefs, references, art direction and revisions. Open to a full-time role, an art test or paid project work, remote.</span><span class="ru">Спокойно работаю с брифом, референсами, арт-дирекшеном и правками. Открыта к полной занятости, тестовому заданию и проектной работе, удалённо.</span></p>
+      <div class="c-list">
+        <div><b><span class="en">Focus</span><span class="ru">Фокус</span></b><span><span class="en">Character & costume design, turnarounds, skins, key art, comics</span><span class="ru">Дизайн персонажей и костюмов, развороты, скины, иллюстрация, комикс</span></span></div>
+        <div><b>3D</b><span><span class="en">Stylized characters, hero props and environments in Blender</span><span class="ru">Стилизованные персонажи, хиро-пропсы и окружение в Blender</span></span></div>
+        <div><b><span class="en">Tools</span><span class="ru">Софт</span></b><span>Photoshop, SAI 2, Blender, ZBrush, Substance 3D Painter</span></div>
+        <div><b><span class="en">Clients</span><span class="ru">Заказчики</span></b><span><span class="en">Russia, Europe, Canada · since 2024</span><span class="ru">Россия, Европа, Канада · с 2024</span></span></div>
+      </div>
     </div>
   </div>
-</section>
-
-<div class="marquee" aria-hidden="true"><div class="marquee-row">
-  <span>Character design</span><span>Turnarounds</span><span>Skins</span><span>Key art</span><span>Blender</span><span>Comics</span>
-  <span>Character design</span><span>Turnarounds</span><span>Skins</span><span>Key art</span><span>Blender</span><span>Comics</span>
-</div></div>
-
-<section class="x-statement" id="about"><div class="shell">
-  <p class="reveal"><span class="en">I draw the character first,<br>then I <em>build it</em>.</span><span class="ru">Сначала я рисую персонажа,<br>потом <em>строю его</em>.</span></p>
-  <p class="sub reveal"><span class="en">I came to 3D from illustration, so I think about a character as a whole: how it reads as a silhouette, how its costume scales into skins, and how a sheet turns into a model. Comfortable with briefs, references, art direction and revisions. Open to a full-time role, an art test or paid project work.</span><span class="ru">Я пришла в 3D из иллюстрации, поэтому думаю о персонаже целиком: как он читается силуэтом, как костюм разводится в скины и как лист превращается в модель. Спокойно работаю с брифом, референсами, арт-дирекшеном и правками. Открыта к полной занятости, тестовому и оплачиваемым проектам.</span></p>
-  <nav class="x-index reveal" style="margin-top:56px">
-    <a href="cv.html"><span class="n">CV</span><span class="t"><span class="en">Character Artist resume</span><span class="ru">Резюме художника по персонажам</span></span><span class="y">PDF · EN / RU</span></a>
-    <a href="art.html"><span class="n">2D</span><span class="t"><span class="en">Illustration & comics</span><span class="ru">Иллюстрация и комикс</span></span><span class="y">2023–2025</span></a>
-  </nav>
 </div></section>
 
-<section class="x-contact" id="contact"><div class="shell">
-  <h2 class="reveal"><span class="en">Let's build<br>your <em>cast.</em></span><span class="ru">Соберём<br>ваших <em>героев.</em></span></h2>
-  <div class="x-links reveal">
+<section class="c-contact" id="contact"><div class="shell">
+  <h2 class="reveal"><span class="en">Looking for a character artist? <em>Let’s talk.</em></span><span class="ru">Ищете художника по персонажам? <em>Давайте обсудим.</em></span></h2>
+  <div class="c-links reveal">
     <a href="https://t.me/RoyScit" target="_blank" rel="noopener"><span class="k">Telegram</span><span class="v">@RoyScit</span></a>
     <a href="tel:+79312035556"><span class="k"><span class="en">Phone</span><span class="ru">Телефон</span></span><span class="v">+7 931 203-55-56</span></a>
-    <a href="cv.html"><span class="k">CV</span><span class="v"><span class="en">Open resume</span><span class="ru">Открыть резюме</span></span></a>
+    <a href="cv.html"><span class="k">CV</span><span class="v"><span class="en">PDF, EN / RU</span><span class="ru">PDF, EN / RU</span></span></a>
   </div>
 </div></section>
 </main>
 
 <footer class="footer"><div class="shell footer-inner">
   <span>© <span data-year>2026</span> Vera Napalkova</span>
-  <span><span class="en">Artwork and character design: Vera Napalkova</span><span class="ru">Работы и дизайн персонажей: Вера Напалкова</span></span>
+  <span><span class="en">All artwork by Vera Napalkova</span><span class="ru">Все работы: Вера Напалкова</span></span>
   <a href="https://t.me/RoyScit" target="_blank" rel="noopener">Telegram @RoyScit</a>
 </div></footer>
 
-<script src="assets/js/gl.js" defer></script>
-<script src="assets/js/site.js" defer></script>
+<script src="assets/js/calm.js" defer></script>
 </body>
 </html>
