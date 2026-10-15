@@ -218,7 +218,7 @@ body.lock{overflow:hidden}
 .three-row figure{position:relative;background:#000;overflow:hidden}
 .three-row img,.three-row video{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform 1.2s var(--ease)}
 .three-row figure:hover img{transform:scale(1.04)}
-.three-row figcaption{position:absolute;left:14px;bottom:12px;font-size:12px;letter-spacing:.08em;color:var(--t2)}
+.three-row figcaption{position:absolute;left:14px;bottom:12px;font-size:12px;letter-spacing:.08em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.7)}
 .three-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 .three-pair figure{background:#000;position:relative}
 .three-pair img{width:100%;cursor:zoom-in}
@@ -297,16 +297,28 @@ body.lock{overflow:hidden}
   .hero-role .dash{margin-top:12px;width:28px}
   .skin-pick button{width:50px;height:68px}
   .hero-cap{display:none}
-  .lineup{overflow-x:auto;scrollbar-width:none}
-  .formation{width:980px;height:420px}
+  .lineup{overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory;padding:0 0 40px}
+  .lineup::-webkit-scrollbar{display:none}
+  .formation{display:flex;align-items:flex-end;gap:6vw;width:max-content;height:auto;padding:24px 19vw 0;max-width:none}
+  .formation::after{left:0;right:0}
+  .knight,.knight.front,.knight.back{position:relative;left:auto;bottom:auto;transform:none;width:62vw;height:min(108vw,460px);flex:none;scroll-snap-align:center;filter:none;z-index:1}
+  .formation:hover .knight{filter:none}
+  .knight span{opacity:1;bottom:-28px}
+  .knight:hover img{transform:none}
   .spot{grid-template-columns:1fr;grid-template-rows:1fr auto}
   .spot-nav{position:absolute;bottom:22px}
+  .spot-fig{height:84dvh;padding-bottom:64px}
+  .spot-fig figcaption{flex-wrap:wrap;justify-content:center;font-size:22px}
   .spot-nav.prev{left:20px}.spot-nav.next{right:20px}
   .notes,.facts{grid-template-columns:1fr;gap:20px}
   .three-pair{grid-template-columns:1fr}
-  .three-row{grid-template-columns:1fr 1fr}
+  .three-row{grid-template-columns:repeat(3,1fr);gap:8px}
+  .three-row figure:last-child{grid-column:1 / -1}
+  .three-row figcaption{display:none}
+  .three-row figure:last-child figcaption{display:block}
+  .view{aspect-ratio:2.1}
+  .cast-foot{text-align:center;align-items:center}
   .masonry{columns:1}
   .faces{grid-template-columns:repeat(3,1fr)}
   .cast-foot{flex-direction:column}
-  .view{aspect-ratio:1.6}
 }
