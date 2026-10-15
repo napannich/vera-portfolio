@@ -49,7 +49,7 @@
       no.textContent = String(Number(k.dataset.k) + 1).padStart(2, '0');
       img.style.animation = 'none'; img.offsetHeight; img.style.animation = '';
     };
-    const open = (i) => { last = document.activeElement; spot.hidden = false; show(i); requestAnimationFrame(() => spot.classList.add('open')); document.body.classList.add('lock'); $('.spot-x', spot).focus(); };
+    const open = (i) => { last = document.activeElement; spot.hidden = false; show(i); setTimeout(() => spot.classList.add('open'), 20); document.body.classList.add('lock'); $('.spot-x', spot).focus(); };
     const close = () => { spot.classList.remove('open'); document.body.classList.remove('lock'); setTimeout(() => { spot.hidden = true; }, 300); if (last) last.focus(); };
     knights.forEach((k, i) => k.addEventListener('click', () => open(i)));
     $('.spot-x', spot).addEventListener('click', close);
