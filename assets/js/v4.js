@@ -35,39 +35,33 @@
   }), { rootMargin: '0px 0px -10% 0px' }) : null;
   $$('.rv').forEach(el => io ? io.observe(el) : el.classList.add('in'));
 
-  // armour card track: drag, arrows, progress
-  const track = $('.track');
-  if (track) {
-    const bar = $('.tbar i');
-    const upd = () => {
-      const max = track.scrollWidth - track.clientWidth;
-      const vis = track.clientWidth / track.scrollWidth;
-      if (bar) { bar.style.width = (vis * 100) + '%'; bar.style.transform = `translateX(${max > 0 ? (track.scrollLeft / max) * ((1 - vis) / vis) * 100 : 0}%)`; }
+  // formation: click a knight to see it up close
+  const lineup = $('.lineup');
+  const spot = $('.spot');
+  const knights = $$('.knight').sort((a, b) => a.dataset.k - b.dataset.k);
+  if (spot && knights.length) {
+    const img = $('.spot-fig img', spot), no = $('.spot-no', spot);
+    let cur = 0, last = null;
+    const show = (i) => {
+      cur = (i + knights.length) % knights.length;
+      const k = knights[cur];
+      img.src = $('img', k).src; img.alt = 'Armour concept ' + (Number(k.dataset.k) + 1);
+      no.textContent = String(Number(k.dataset.k) + 1).padStart(2, '0');
+      img.style.animation = 'none'; img.offsetHeight; img.style.animation = '';
     };
-    track.addEventListener('scroll', upd, { passive: true });
-    window.addEventListener('resize', upd); upd();
-    $$('.tbtn').forEach(b => b.addEventListener('click', () => {
-      const card = $('.kcard', track); const step = card ? card.getBoundingClientRect().width + 20 : 300;
-      track.scrollBy({ left: step * 2 * Number(b.dataset.dir), behavior: 'smooth' });
-    }));
-    let down = false, x0 = 0, s0 = 0, moved = false;
-    track.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = false; x0 = e.clientX; s0 = track.scrollLeft; });
-    window.addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - x0; if (Math.abs(dx) > 5) { moved = true; track.classList.add('drag'); } track.scrollLeft = s0 - dx; });
-    window.addEventListener('pointerup', () => { if (!down) return; down = false; track.classList.remove('drag'); });
-    track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
-    // tilt + light follow the pointer on each card
-    if (!reduce && matchMedia('(pointer:fine)').matches) {
-      $$('.kcard', track).forEach(card => {
-        card.addEventListener('pointermove', e => {
-          if (down) return;
-          const r = card.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-          card.style.setProperty('--ry', ((x - .5) * 10).toFixed(2) + 'deg');
-          card.style.setProperty('--rx', ((.5 - y) * 8).toFixed(2) + 'deg');
-          card.style.setProperty('--gx', (x * 100).toFixed(1) + '%'); card.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
-        });
-        card.addEventListener('pointerleave', () => { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
-      });
-    }
+    const open = (i) => { last = document.activeElement; spot.hidden = false; show(i); requestAnimationFrame(() => spot.classList.add('open')); document.body.classList.add('lock'); $('.spot-x', spot).focus(); };
+    const close = () => { spot.classList.remove('open'); document.body.classList.remove('lock'); setTimeout(() => { spot.hidden = true; }, 300); if (last) last.focus(); };
+    knights.forEach((k, i) => k.addEventListener('click', () => open(i)));
+    $('.spot-x', spot).addEventListener('click', close);
+    $('.prev', spot).addEventListener('click', () => show(cur - 1));
+    $('.next', spot).addEventListener('click', () => show(cur + 1));
+    spot.addEventListener('click', e => { if (e.target === spot) close(); });
+    document.addEventListener('keydown', e => {
+      if (spot.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') show(cur + 1);
+      if (e.key === 'ArrowLeft') show(cur - 1);
+    });
   }
 
   // hero depth: the painting drifts slightly against the pointer
