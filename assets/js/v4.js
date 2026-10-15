@@ -33,11 +33,52 @@
   const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }), { rootMargin: '0px 0px -10% 0px' }) : null;
-  $$('.rv, .lineup').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+  $$('.rv').forEach(el => io ? io.observe(el) : el.classList.add('in'));
 
-  // start the lineup centred when it scrolls sideways (phones)
-  const lu = $('.lineup');
-  if (lu && lu.scrollWidth > lu.clientWidth) lu.scrollLeft = (lu.scrollWidth - lu.clientWidth) / 2;
+  // armour card track: drag, arrows, progress
+  const track = $('.track');
+  if (track) {
+    const bar = $('.tbar i');
+    const upd = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const vis = track.clientWidth / track.scrollWidth;
+      if (bar) { bar.style.width = (vis * 100) + '%'; bar.style.transform = `translateX(${max > 0 ? (track.scrollLeft / max) * ((1 - vis) / vis) * 100 : 0}%)`; }
+    };
+    track.addEventListener('scroll', upd, { passive: true });
+    window.addEventListener('resize', upd); upd();
+    $$('.tbtn').forEach(b => b.addEventListener('click', () => {
+      const card = $('.kcard', track); const step = card ? card.getBoundingClientRect().width + 20 : 300;
+      track.scrollBy({ left: step * 2 * Number(b.dataset.dir), behavior: 'smooth' });
+    }));
+    let down = false, x0 = 0, s0 = 0, moved = false;
+    track.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = false; x0 = e.clientX; s0 = track.scrollLeft; });
+    window.addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - x0; if (Math.abs(dx) > 5) { moved = true; track.classList.add('drag'); } track.scrollLeft = s0 - dx; });
+    window.addEventListener('pointerup', () => { if (!down) return; down = false; track.classList.remove('drag'); });
+    track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+    // tilt + light follow the pointer on each card
+    if (!reduce && matchMedia('(pointer:fine)').matches) {
+      $$('.kcard', track).forEach(card => {
+        card.addEventListener('pointermove', e => {
+          if (down) return;
+          const r = card.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+          card.style.setProperty('--ry', ((x - .5) * 10).toFixed(2) + 'deg');
+          card.style.setProperty('--rx', ((.5 - y) * 8).toFixed(2) + 'deg');
+          card.style.setProperty('--gx', (x * 100).toFixed(1) + '%'); card.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('pointerleave', () => { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
+      });
+    }
+  }
+
+  // hero depth: the painting drifts slightly against the pointer
+  const hero = $('.hero');
+  if (hero && !reduce && matchMedia('(pointer:fine)').matches) {
+    hero.addEventListener('pointermove', e => {
+      const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+      hero.style.setProperty('--px', (x * -18).toFixed(1) + 'px');
+      hero.style.setProperty('--py', (y * -12).toFixed(1) + 'px');
+    });
+  }
 
   // fireflies echoing the lily key art
   const flies = $('.flies');
