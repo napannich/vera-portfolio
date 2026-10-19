@@ -322,3 +322,15 @@ body.lock{overflow:hidden}
   .faces{grid-template-columns:repeat(3,1fr)}
   .cast-foot{flex-direction:column}
 }
+
+/* hiring CTA (v5) */
+.hero-cta{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px}
+.avail{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--t2);letter-spacing:.01em}
+.avail i{width:8px;height:8px;border-radius:50%;background:#7fd18b;box-shadow:0 0 0 4px rgba(127,209,139,.18);flex:none}
+.hero-btns{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border:1px solid var(--gold);background:var(--gold);color:#14110c;font:500 14px/1 var(--sans);letter-spacing:.04em;transition:background .25s,color .25s}
+.btn:hover{background:transparent;color:var(--gold)}
+.btn.ghost{background:transparent;color:var(--t)}
+.btn.ghost:hover{color:var(--gold)}
+.contact-mail{font-size:clamp(34px,7.4vw,124px);overflow-wrap:anywhere}
+@media (max-width:700px){.hero-cta{gap:14px}.avail{font-size:13px}.btn{flex:1}.hero-btns{width:100%}}
